@@ -1,0 +1,70 @@
+.list_items {
+    /* border-right: 1px solid #99999967; */
+    height: 100vh;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.list_title {
+    margin-left: 1rem;
+    color: #000000d0
+}
+
+.list_container {
+    padding: 1rem;
+}
+
+.li_one {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    padding: .25rem;
+    transition: all 0.3s ease-in-out;
+}
+.li_one:hover{
+    background-color: #c4c4c473;
+    padding: .25rem;
+    font-weight: 600;
+    border-radius: 5px;
+}
+/* .list_item_container{
+ 
+} */
+.li_one .play_title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    margin: 0 5rem 0 1.85rem;
+    color: #000000d0;
+}
+
+.li_one .icons {
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+.player_container{
+    width: 20px;
+    height: 20px;
+    border-radius: 40%;
+    padding: .26rem;
+    background-color: #c4c4c4d3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.li_one .play_count {
+    padding: 0 .40rem 0 .40em;
+    color: #fff;
+    font-size: .79rem;
+
+}
+.addBook{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}

@@ -1,0 +1,18 @@
+.nav_item{
+    color: #000000e0;
+    font-weight: 600;
+}
+.form{
+    position: relative;
+    background-color: aqua;
+    /* overflow:hidden !important; */
+}
+.link{
+    text-decoration: none;
+}
+.user_img{
+    width: 25px;
+    height: 25px;
+    border-radius: 10px;
+    object-fit: cover;
+}

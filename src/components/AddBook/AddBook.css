@@ -1,0 +1,56 @@
+.Addform_container{
+    position:absolute;
+    top:-625px;
+    left:355px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-image:linear-gradient(#4b4b4ba1,#000000ab), url(https://images.pexels.com/photos/694740/pexels-photo-694740.jpeg?auto=compress&cs=tinysrgb&w=1000);
+    object-fit: cover;
+    width: 50vw;
+    height: 80%;
+    z-index: 999;
+    border-radius:20px;
+}
+.Addform_container .Addform_box{
+    background-color: #fff;
+    padding: .87rem;
+    font-size: .88em;
+    border-radius: 20px;
+    box-shadow: 3px 3px 8px 3px rgba(232,232,232,0.75);
+    -webkit-box-shadow: 1px 1px 8px 3px rgba(232,232,232,0.75);
+    -moz-box-shadow: 3px 3px 8px 3px rgba(232,232,232,0.75);
+}
+.Addform_container .add_title{
+    letter-spacing: 1px;
+}
+::placeholder{
+    font-weight: 400;
+    color: gray;
+    
+}
+.addCl{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.addCl .close_icon{
+    position: absolute;
+    top: 0;
+    left: 300px;
+    width: 20px;
+    height: 20px;
+    background-color: #fff;
+    border-radius:10px;
+    color: #000000cb;
+    cursor: pointer;
+    font-size: .77rem;
+    
+}
+.form-control{
+    padding: 0.15rem 0.75rem !important;
+    font-size: 14px !important;
+}

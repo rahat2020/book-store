@@ -1,0 +1,45 @@
+.form_container{
+    position:absolute;
+    top:0;
+    left:0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image:linear-gradient(#4b4b4ba1,#000000ab), url(https://images.pexels.com/photos/4012966/pexels-photo-4012966.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    object-fit: cover;
+    width: 100vw;
+    height: 110vh;
+    z-index: 9;
+    overflow: hidden;
+}
+.form_container .form_box{
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 3px 3px 8px 3px rgba(232,232,232,0.75);
+    -webkit-box-shadow: 1px 1px 8px 3px rgba(232,232,232,0.75);
+    -moz-box-shadow: 3px 3px 8px 3px rgba(232,232,232,0.75);
+}
+.form_container .register_title{
+    letter-spacing: 1px;
+}
+::placeholder{
+    font-weight: 400;
+    color: gray;
+    
+}
+.register_closeIocn{
+    position: relative;
+
+}
+.register_closeIocn .Regclose_icon{
+    position: absolute;
+    top: -20px;
+    left: 280px;
+    width: 25px;
+    height: 25px;
+    background-color: #0d6efd;
+    border-radius:10px;
+    color: #fff;
+    cursor: pointer;
+}

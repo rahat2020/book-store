@@ -1,0 +1,43 @@
+.L_title{
+    color: #969696;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    /* height: 30px; */
+}
+.L_title .arrow{
+    height: 20px;
+    cursor: pointer;
+    margin-left: 1rem;
+    /* border: 1px solid #000; */
+    
+}
+.L_title .up{
+    font-size: .87rem;
+}
+.up{
+    width: 11px;
+    height: 8px;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+.books_data{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.books_data .books{
+    width: 70px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.books_data .books_details{
+    display: flex;
+    justify-content: flex-start;
+    align-items: start;
+    flex-direction: column;
+    margin-left: 1rem;
+    font-weight: 500;
+    color: #969696;
+}

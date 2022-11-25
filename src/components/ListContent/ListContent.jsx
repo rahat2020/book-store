@@ -3,9 +3,20 @@ import './ListContent.css';
 import { Table } from 'react-bootstrap';
 import up from '../../asset/up.png';
 import down from '../../asset/down.png';
-import one from '../../asset/cover-one.png';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
 
 const ListContent = () => {
+    const [data, setData] = useState([])
+    console.log(data)
+    useEffect(() => {
+        const fetchData = async () => {
+            const res = await axios.get('http://localhost:5000/book/get')
+            setData(res.data)
+        }
+        fetchData()
+    }, [])
+
     return (
         <div>
             <Table hover>
@@ -51,32 +62,37 @@ const ListContent = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <div className="books_data">
-                                <img src={one} alt="" className="books" />
-                                <div className="books_details">
-                                    <span className="text-dark">Faith</span>
-                                    <span>David Backham</span>
-                                </div>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
-                                <span className="text-secondary">Fiction</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
-                                <span className="text-secondary">76%</span>
-                            </div>
-                        </td>
-                        <td>
-                            <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
-                                <span className="text-secondary">12 mintutes ago</span>
-                            </div>
-                        </td>
-                    </tr>
+                    {
+                        data.map((item, index) => (
+                            <tr key={index}>
+                                <td>
+                                    <div className="books_data">
+                                        <img src={item.img} alt="" className="books" />
+                                        <div className="books_details">
+                                            <span className="text-dark">{item.title}</span>
+                                            <span>{item.author}</span>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
+                                        <span className="text-secondary">{item.genre}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
+                                        <span className="text-secondary">{item.progress}</span>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
+                                        <span className="text-secondary">{item.opened}</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        ))
+                    }
+
                 </tbody>
             </Table>
         </div>

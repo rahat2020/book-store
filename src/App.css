@@ -1,0 +1,64 @@
+
+.dark-theme{
+    background-color: #222;
+    color: #f3f3f3;
+}
+/* .dark-theme .testimonial{
+    background-color: #222 !important;
+} */
+
+.dark-theme .play_title{
+    color: #ffffff;
+}
+
+.dark-theme .list_title{
+    color: #ffffff;
+}
+.dark-theme .C_title{
+    color: #ffffff;
+}
+.dark-theme .nav_item{
+    color: #ffffff;
+}
+.dark-theme .grid_icon{
+    color: #ffffff;
+}
+.dark-theme .list_icon{
+    color: #ffffff;
+}
+.dark-theme .search_icon{
+    color: #ffffff;
+}
+.dark-theme .dot_icon{
+    color: #ffffff;
+}
+.dark-theme .Bklogo{
+    color: #ffffff;
+}
+.dark-theme .list_items{
+    border-radius: 10px;
+    box-shadow:1px 1px 10px 1px #c4c4c423;
+}
+.dark-theme .card_text ,.card_text_two{
+    color: #ffffff !important;
+}
+.dark-theme .content{
+    border-radius: 10px;
+    box-shadow:1px 1px 7px 1px #c4c4c46e !important;
+}
+.dark-theme .GridContent_card{
+   background-color: #33333300;
+}
+.light-theme {
+    background-color: #fff;
+    color: #000000d0;  
+}
+.light-theme .play_title, .nav_item,.Bklogo{
+    color: #000000d0;
+}
+.light-theme .C_title{
+    color: #000000d0;
+}
+.light-theme .card_text_two{
+    color: #000000d0 !important;
+}

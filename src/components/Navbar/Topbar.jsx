@@ -41,7 +41,7 @@ function Topbar() {
       <Navbar expand="lg" className="shadow-sm">
         <Container>
           <Link to="/" className="link">
-            <Navbar.Brand>Books Store</Navbar.Brand>
+            <Navbar.Brand className="Bklogo">Books Store</Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -50,10 +50,6 @@ function Topbar() {
               <Nav.Link href="#link" className="nav_item">Contact</Nav.Link>
               <Nav.Link href="#link" className="nav_item">About</Nav.Link>
               <Nav.Link href="#link" className="nav_item">Author</Nav.Link>
-
-
-              {/* <Nav.Link href="#link" className="nav_item" onClick={loginFun}>Login</Nav.Link>
-              <Nav.Link href="#link" className="nav_item" onClick={registerFunOpen}>Register</Nav.Link> */}
 
               {
                 user ?
@@ -78,7 +74,7 @@ function Topbar() {
       </Navbar>
       <div className="form">
         {
-          show ? <Register registerFunClose={registerFunClose} /> : ' '
+          show ? <Register registerFunClose={registerFunClose} loginFun={loginFun}/> : ' '
         }
       </div>
       <div className="form">

@@ -29,14 +29,14 @@ const GridContent = () => {
     }
 
     return (
-        <div className="container">
+        <div className="container GC">
             <div className="row">
                 {
                     data.map((item, index) => (
 
                         <div className="col-md-4" key={index} onClick={() => handleShow(item._id)}>
                             {/* <Link to={`/book/${item._id}`}> */}
-                            <Card style={{ width: '17rem', height: "380px", borderTopLeftRadius: '50%', borderTopRightRadius: '50%', border: "none" }}>
+                            <Card className="GridContent_card" style={{ width: '17rem', height: "380px", borderTopLeftRadius: '50%', borderTopRightRadius: '50%', border: "none" }}>
                                 <Card.Img variant="top" src={item.img} className="card_img" />
                                 <Card.Text className="card_text fw-bold text-dark ">
                                     {item.title}

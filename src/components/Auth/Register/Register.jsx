@@ -6,7 +6,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
 
-const Register = ({registerFunClose}) => {
+const Register = ({registerFunClose,loginFun}) => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const [file, setFile] = useState('');
@@ -35,6 +35,10 @@ const Register = ({registerFunClose}) => {
                 icon: 'success',
                 title: 'Registrations successfull',
             })
+            loginFun(true)
+            // setTimeout(() => {
+            //     res && window.location.reload()
+            //   }, [1000])
         } catch (e) {
             e && Swal.fire({
                 icon: 'error',
@@ -44,6 +48,7 @@ const Register = ({registerFunClose}) => {
 
     }
 
+    
 
 
     return (

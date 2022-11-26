@@ -23,7 +23,7 @@ const ListContent = () => {
                 <thead >
                     <tr>
                         <th className="L_title">
-                            <div className="d-flex justify-content-start align-items-center">
+                            <div className="d-flex justify-content-start align-items-center ">
                                 Book Title & Author
                                 <div className="d-flex flex-column justify-content-center align-items-center">
                                     <img src={up} alt="" className="up" />
@@ -69,24 +69,24 @@ const ListContent = () => {
                                     <div className="books_data">
                                         <img src={item.img} alt="" className="books" />
                                         <div className="books_details">
-                                            <span className="text-dark">{item.title}</span>
-                                            <span>{item.author}</span>
+                                            <span className="text-dark card_text">{item.title}</span>
+                                            <span className="card_text">{item.author}</span>
                                         </div>
                                     </div>
                                 </td>
                                 <td>
                                     <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
-                                        <span className="text-secondary">{item.genre}</span>
+                                        <span className="text-secondary card_text">{item.genre}</span>
                                     </div>
                                 </td>
                                 <td>
                                     <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
-                                        <span className="text-secondary">{item.progress}</span>
+                                        <span className="text-secondary card_text">{item.progress}</span>
                                     </div>
                                 </td>
                                 <td>
                                     <div className="d-flex h-100 mt-4 justify-content-start align-items-center">
-                                        <span className="text-secondary">{item.opened}</span>
+                                        <span className="text-secondary card_text">{item.opened}</span>
                                     </div>
                                 </td>
                             </tr>

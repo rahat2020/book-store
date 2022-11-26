@@ -1,4 +1,6 @@
-
+.GC{
+    position: relative;
+}
 .card_img {
     height: 300px;
     position: relative;
@@ -38,6 +40,8 @@
 }
 
 .bookModal{
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
     
 }

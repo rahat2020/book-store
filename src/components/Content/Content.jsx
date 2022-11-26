@@ -17,7 +17,6 @@ const Content = () => {
         setShowList(true);
         setShow(false);
         setShowSearch(false);
-
     }
     const showGrid = () => {
         setShow(true);
@@ -32,7 +31,7 @@ const Content = () => {
             <div className="content shadow">
                 <div className="content_header">
                     <div className="Cheader_left">
-                        <h3>Book Library</h3>
+                        <h3 className="C_title">Book Library</h3>
                         <div className="chleft_icon">
                             <i className="fa-solid fa-ellipsis dot_icon"></i>
                         </div>

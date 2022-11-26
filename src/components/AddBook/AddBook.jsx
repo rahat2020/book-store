@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './AddBook.css';
 import Form from 'react-bootstrap/Form';
 import Swal from 'sweetalert2'
 import { useState } from 'react';
 import axios from 'axios';
 import CloseIcon from '@mui/icons-material/Close';
+import { AuthContext } from '../../context/AuthContext';
 
 const AddBook = ({ hanldeClose }) => {
 
+    // context part
+    const {  user } = useContext(AuthContext)
+
+
     const [title, setTitle] = useState('')
-    const [author, setAuthor] = useState('')
+    // const [author, setAuthor] = useState('')
     const [file, setFile] = useState('')
     const [opened, setOpened] = useState('')
     const [genre, setGenre] = useState('')
@@ -24,7 +29,7 @@ const AddBook = ({ hanldeClose }) => {
             const uploadRes = await axios.post("https://api.cloudinary.com/v1_1/rahatdev1020/image/upload", data)
             const { url } = uploadRes.data
             const userObj = {
-                author,
+                author:user.username,
                 title,
                 genre,
                 opened,
@@ -40,6 +45,9 @@ const AddBook = ({ hanldeClose }) => {
                 icon: 'success',
                 title: 'Book add successfully',
             })
+            setTimeout(() => {
+                res && window.location.reload()
+              }, [1000])
         } catch (e) {
             e && Swal.fire({
                 icon: 'error',
@@ -62,11 +70,11 @@ const AddBook = ({ hanldeClose }) => {
                     </Form.Group>
                     <Form.Group className="mb-2" controlId="formBasicName">
                         <Form.Label className="text-muted fw-bold">Author Name</Form.Label>
-                        <Form.Control type="text" placeholder="author name`" onChange={(e) => setAuthor(e.target.value)} />
+                        <Form.Control type="text" placeholder="author name" defaultValue={user.username} />
                     </Form.Group>
                     <Form.Group className="mb-2" controlId="formBasicImg">
                         <Form.Label className="text-muted fw-bold">Book Image</Form.Label>
-                        <Form.Control type="file"  onChange={(e) => setFile(e.target.files[0])} />
+                        <Form.Control type="file" onChange={(e) => setFile(e.target.files[0])} />
                     </Form.Group>
                     <Form.Group className="mb-2" controlId="formBasicGen">
                         <Form.Label className="text-muted fw-bold">Genre</Form.Label>

@@ -1,8 +1,10 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import AddBook from '../AddBook/AddBook';
 import './Sidebar.css';
 import LogoutIcon from '@mui/icons-material/Logout';
 import { AuthContext } from '../../context/AuthContext';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Sidebar = () => {
   const [show, setShow] = useState(false)
@@ -14,13 +16,32 @@ const Sidebar = () => {
     setShow(false)
   }
 
-  const { dispatch,user } = useContext(AuthContext)
+  // context part
+  const { dispatch, user } = useContext(AuthContext)
   const handleLogout = () => {
     dispatch({ type: "LOGOUT" });
   }
 
+  // dark mode implementations
+  const [theme, setTheme] = useState("light-theme")
+  // console.log(theme)
+  const handleClick = () => {
+    if (theme === "dark-theme") {
+      setTheme("light-theme")
+    } else {
+      setTheme("dark-theme")
+    }
+  }
+  useEffect(() => {
+    document.body.className = theme
+  }, [theme])
+
+  // toast part
+  const notify = () => toast("Please login or Register, Thank you!");
+
   return (
     <>
+      <ToastContainer/>
       <div className="container shadow">
         <div className="list_items">
           <h5 className="list_title">Library</h5>
@@ -35,29 +56,59 @@ const Sidebar = () => {
                 <span className="play_count">15</span>
               </div>
             </div>
-            <div className="li_one mt-5" onClick={bookOpen}>
-              <div className="list_item_container">
-                <i className="fa-solid fa-plus icons"></i>
-                <span className="play_title">Add new book</span>
-              </div>
-            </div>
+            {
+              user ?
+                <div className="li_one mt-5" onClick={bookOpen}>
+                  <div className="list_item_container">
+                    <i className="fa-solid fa-plus icons"></i>
+                    <span className="play_title">Add new book</span>
+                  </div>
+                </div>
+                :
+                <div className="li_one mt-5" onClick={notify}>
+                  <div className="list_item_container">
+                    <i className="fa-solid fa-plus icons"></i>
+                    <span className="play_title">Add new book</span>
+                  </div>
+                </div>
+
+            }
           </div>
 
           <h5 className="list_title mt-5">Settings</h5>
-          <div className="list_container">
-            <div className="li_one">
-              <div className="list_item_container">
-                <i className="fa-solid fa-circle-half-stroke"></i>
-                <span className="play_title">Dark Mode</span>
+
+          {
+            theme === "dark-theme" ?
+
+              <div className="list_container" onClick={() => handleClick()}>
+                <div className="li_one">
+                  <div className="list_item_container">
+                    <i className="fa-solid fa-circle-half-stroke"></i>
+                    <span className="play_title">Light Mode</span>
+                  </div>
+                  <div className="player_container">
+                    <span className="play_count"></span>
+                  </div>
+                </div>
               </div>
-              <div className="player_container">
-                <span className="play_count"></span>
+              :
+              <div className="list_container" onClick={() => handleClick()}>
+                <div className="li_one">
+                  <div className="list_item_container">
+                    <i className="fa-solid fa-circle-half-stroke"></i>
+                    <span className="play_title">Dark Mode</span>
+                  </div>
+                  <div className="player_container">
+                    <span className="play_count"></span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
+
+          }
+
           {
             user ?
-              <div className="list_container">
+              <div className="list_container" >
                 <div className="li_one" onClick={handleLogout}>
                   <div className="list_item_container">
                     <LogoutIcon />

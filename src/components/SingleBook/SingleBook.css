@@ -1,12 +1,9 @@
 .Sb{
-    position: absolute;
-    top: -470px;
-    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 50vw;
-    height: 90vh;
+    height: 95vh;
     background-image:linear-gradient(#4b4b4ba1,#000000ab), url('https://images.pexels.com/photos/1907785/pexels-photo-1907785.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
     object-fit: cover;
     /* background-repeat: no-repeat; */
@@ -46,4 +43,17 @@
     font-size: 1.14rem;
     color: #888;
     text-align: center;
+}
+
+.actions .actionBtn{
+    color: #ffffffe1;
+    cursor: pointer;
+    background-color: #0d6efd;
+    font-size: 1.57rem;
+    border-radius: 5px;
+    transition: all 0.2s ease-in;
+}
+.actions .actionBtn:hover{
+    color: #fff;
+    background-color: #0261f0;
 }
